@@ -1,0 +1,442 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  body{
+    font-family: montserrat;
+  }
+  nav{
+    background: black;
+    height: 80px;
+    width: 100%;
+  }
+  label.logo{
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+  }
+  label.logo span{
+    color: #b50d05;
+  }
+  nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+  nav ul li e{
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  e.active,e:hover{
+    background: grey;
+    transition: .5s;
+  }
+  .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  #check{
+    display: none;
+  }
+  @media (max-width: 952px){
+    label.logo{
+      font-size: 30px;
+      padding-left: 50px;
+    }
+    nav ul li e{
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 858px){
+    .checkbtn{
+      display: block;
+    }
+    ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: grey;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+    nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li e{
+      font-size: 20px;
+    }
+    e:hover,e.active{
+      background: none;
+      color: #b50d05;
+    }
+    #check:checked ~ ul{
+      left: 0;
+    }
+  }
+  .HOME img{
+    margin-top: 2%;
+    margin-left: 60%;
+  }
+  .HOME h1{
+    margin-left: 13%;
+    font-size: 30px;
+  }
+  .HOME h1 span{
+    font-size: 50px;
+    color: #b50d05;
+  }
+  .HOME w{
+    margin-left: 15%;
+    font-weight: 900;
+  }
+  .ABOUT h2{
+    margin-left: 13%;
+    margin-top: 5%;
+  }
+  .ABOUT p{
+    margin-left: 13%;
+    margin-top: 1%;
+  }
+  .SKILLS{
+    margin-top: 5%;
+    margin-left: 13%;
+  }
+  .skill-bars{
+    margin-top: 1%;
+    padding: 25px 30px;
+    width: 600px;
+    background: #fff;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+    border-radius: 10px;
+  }
+  .skill-bars .bar{
+    margin: 20px 0;
+  }
+  .skill-bars .bar:first-child{
+    margin-top: 0px;
+  }
+  .skill-bars .bar .info{
+    margin-bottom: 5px;
+  }
+  .skill-bars .bar .info span{
+    font-weight: 500;
+    font-size: 17px;
+    opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
+  }
+  @keyframes showText {
+    100%{
+      opacity: 1;
+    }
+  }
+  .skill-bars .bar .progress-line{
+    height: 10px;
+    width: 100%;
+    background: #f0f0f0;
+    position: relative;
+    transform: scaleX(0);
+    transform-origin: left;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.05),
+                0 1px rgba(255,255,255,0.8);
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+  }
+  @keyframes animate {
+    100%{
+      transform: scaleX(1);
+    }
+  }
+  .bar .progress-line span{
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: #b50d05;
+    animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+  }
+  .bar .progress-line.html span{
+    width: 90%;
+  }
+  .bar .progress-line.css span{
+    width: 90%;
+  }
+  .bar .progress-line.JavaScript span{
+    width: 50%;
+  }
+  .bar .progress-line.python span{
+    width: 50%;
+  }
+  .bar .progress-line.C span{
+    width: 60%;
+  }
+  .progress-line span::before{
+    position: absolute;
+    content: "";
+    top: -10px;
+    right: 0;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: #000;
+    opacity: 0;
+    animation: showText2 0.5s 1.5s linear forwards;
+  }
+  .progress-line span::after{
+    position: absolute;
+    top: -28px;
+    right: 0;
+    font-weight: 500;
+    background: #000;
+    color: #fff;
+    padding: 1px 8px;
+    font-size: 12px;
+    border-radius: 3px;
+    opacity: 0;
+    animation: showText2 0.5s 1.5s linear forwards;
+  }
+  @keyframes showText2 {
+    100%{
+      opacity: 1;
+    }
+  }
+  .progress-line.html span::after{
+    content: "90%";
+  }
+  .progress-line.css span::after{
+    content: "90%";
+  }
+  .progress-line.JavaScript span::after{
+    content: "50%";
+  }
+  .progress-line.python span::after{
+    content: "50%";
+  }
+  .progress-line.C span::after{
+    content: "60%";
+  }
+  .EDUCATION h2{
+    margin-left: 13%;
+    margin-top: 5%;
+  }
+  .wrapper{
+    max-width: 1080px;
+    margin: 50px auto;
+    padding: 0 20px;
+    position: relative;
+  }
+  .wrapper .center-line{
+    position: absolute;
+    height: 100%;
+    width: 4px;
+    background: black;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+  }
+  .wrapper .row{
+    display: flex;
+  }
+  .wrapper .row-1{
+    justify-content: flex-start;
+  }
+  .wrapper .row-2{
+    justify-content: flex-end;
+  }
+  .wrapper .row section{
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+    width: calc(50% - 40px);
+    padding: 20px;
+    position: relative;
+  }
+  .wrapper .row section::before{
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background: #fff;
+    top: 28px;
+    z-index: -1;
+    transform: rotate(45deg);
+  }
+  .row-1 section::before{
+    right: -7px;
+  }
+  .row-2 section::before{
+    left: -7px;
+  }
+  .row section .icon,
+  .center-line .scroll-icon{
+    position: absolute;
+    background: #f2f2f2;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #b50d05;
+    font-size: 17px;
+    box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0,0,0,0.08), 0 3px 0 4px rgba(0,0,0,0.05);
+  }
+  .center-line .scroll-icon{
+    bottom: 0px;
+    left: 50%;
+    font-size: 25px;
+    transform: translateX(-50%);
+  }
+  .row-1 section .icon{
+    top: 15px;
+    right: -60px;
+  }
+  .row-2 section .icon{
+    top: 15px;
+    left: -60px;
+  }
+  .row section .details,
+  .row section .bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .row section .details .title{
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .row section p{
+    margin: 10px 0 17px 0;
+  }
+  .row section .bottom a{
+    text-decoration: none;
+    background: #b50d05;
+    color: #fff;
+    padding: 7px 15px;
+    border-radius: 5px;
+    /* font-size: 17px; */
+    font-weight: 400;
+    transition: all 0.3s ease;
+  }
+  .row section .bottom a:hover{
+    transform: scale(0.97);
+  }
+  @media(max-width: 790px){
+    .wrapper .center-line{
+      left: 40px;
+    }
+    .wrapper .row{
+      margin: 30px 0 3px 60px;
+    }
+    .wrapper .row section{
+      width: 100%;
+    }
+    .row-1 section::before{
+      left: -7px;
+    }
+    .row-1 section .icon{
+      left: -60px;
+    }
+  }
+  @media(max-width: 440px){
+    .wrapper .center-line,
+    .row section::before,
+    .row section .icon{
+      display: none;
+    }
+    .wrapper .row{
+      margin: 10px 0;
+    }
+  }
+  .CONTACT{
+    margin-left: 0%;
+    margin-top: 5%;
+  }
+  .social-links {
+    margin-top: 1%; /*use any margin that u need*/
+    display: flex;
+    justify-content: center;
+  }
+
+  a {
+    height: 90px;
+    width: 90px;
+    margin: 0 20px; /*as bigger margin as farther from each other will be social links*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: white(
+      255,
+      210,
+      253
+    ); /*use the same color that body background or any other matching color that u like*/
+    border-radius: 50%; /*50% make round shape,
+    u can use border-radius less than 50% to have oval shape*/
+    border: 1px solid rgba(214, 202, 214, 0.72);
+    box-shadow: 8px 8px 12px -2px rgb(187, 192, 196),
+      -5px -5px 9px -2px rgb(173, 177, 177);
+    transition: transform 1s; /*any transition number from 0.3s to 1s*/
+  }
+
+  a i {
+    font-size: 50px; /*any font-size from 20px to 40px will look good. I've used 50px just
+      for demonstration purpose*/
+    color: black(77, 113, 119);
+    transition: transform 1s; /*it's great to match a{transition: transform 1s;} with
+    i{transition: transform 1s;} it will be synchronized*/
+  }
+
+  a:hover {
+    box-shadow: inset 6px 6px 8px -2px rgb(168, 170, 172),
+      inset -6px -6px 8px -2px rgb(193, 211, 214),
+      0px 12px 10px -10px rgb(124, 146, 143);
+    border: 2px solid rgba(194, 171, 194, 0.3);
+    transform: translateY(3px);
+  }
+
+  a:hover i {
+    transform: scale(0.85);
+  }
+
+  a:hover .fa-instagram {
+    color: #e4405f;
+  }
+
+  a:hover .fa-youtube {
+    color: #cd201f;
+  }
+
+  a:hover .fa-wordpress {
+    color: #21759b;
+  }
+
+  a:hover .fa-linkedin {
+    color: #0077b5;
+  }
+
+  a:hover .fa-github {
+    color: #333333;
+  }
